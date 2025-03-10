@@ -12,7 +12,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let humanChoice = prompt("Choose: Rock, Paper or Scissors");
-  humanChoice = humanChoice.toLowerCase();
+  humanChoice = humanChoice.toLowerCase(); //So any form the user inputs the value can be processed as if it is lowercase.
   if (
     humanChoice === "rock" ||
     humanChoice === "paper" ||
@@ -25,19 +25,19 @@ function getHumanChoice() {
 }
 
 function evaluateChoices(humanChoice, computerChoice) {
-  if (humanChoice == computerChoice) {
+  if (humanChoice === computerChoice) {
     return "tie";
   } else {
-    if (humanChoice == "rock") {
+    if (humanChoice === "rock") {
       switch (computerChoice) {
         case "paper":
           return "lose";
-          break;
+          break; // Excution won't reach this line, but i left it for overall readablity.
         case "scissors":
           return "win";
           break;
       }
-    } else if (humanChoice == "paper") {
+    } else if (humanChoice === "paper") {
       switch (computerChoice) {
         case "scissors":
           return "lose";
@@ -46,7 +46,7 @@ function evaluateChoices(humanChoice, computerChoice) {
           return "win";
           break;
       }
-    } else if (humanChoice == "scissors") {
+    } else if (humanChoice === "scissors") {
       switch (computerChoice) {
         case "rock":
           return "lose";
@@ -70,7 +70,7 @@ function playGame() {
 
     let humanChoice = getHumanChoice();
     while (humanChoice === undefined) {
-      humanChoice = getHumanChoice();
+      humanChoice = getHumanChoice(); //Incase the user inputted a value other than the specified values, the function would return undefined(nothing), and in that case it will be recalled until the user inputs a valid value.
     }
     let computerChoice = getComputerChoice();
 
