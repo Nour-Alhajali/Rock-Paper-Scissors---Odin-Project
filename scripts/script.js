@@ -65,18 +65,6 @@ function playGame() {
   let computerScore = 0;
   let humanScore = 0;
 
-  for (let i = 0; i < 5; i++) {
-    console.log("Round " + i);
-
-    let humanChoice = getHumanChoice();
-    while (humanChoice === undefined) {
-      humanChoice = getHumanChoice(); //Incase the user inputted a value other than the specified values, the function would return undefined(nothing), and in that case it will be recalled until the user inputs a valid value.
-    }
-    let computerChoice = getComputerChoice();
-
-    playRound(humanChoice, computerChoice);
-  }
-
   console.log(
     `Your Score: ${humanScore}\nComputer Score: ${computerScore}\n${evaluateScores(
       humanScore,
