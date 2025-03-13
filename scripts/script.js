@@ -1,76 +1,27 @@
-function getComputerChoice() {
-  let randomChance = Math.random();
-
-  if (randomChance >= 0.66) {
-    return "rock";
-  } else if (randomChance >= 0.33) {
-    return "paper";
-  } else {
-    return "scissors";
-  }
-}
-
-function getHumanChoice() {
-  let humanChoice = prompt("Choose: Rock, Paper or Scissors");
-  humanChoice = humanChoice.toLowerCase(); //So any form the user inputs the value can be processed as if it is lowercase.
-  if (
-    humanChoice === "rock" ||
-    humanChoice === "paper" ||
-    humanChoice === "scissors"
-  ) {
-    return humanChoice;
-  } else {
-    console.log("Invalid Choice, Pick Again");
-  }
-}
-
-function evaluateChoices(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    return "tie";
-  } else {
-    if (humanChoice === "rock") {
-      switch (computerChoice) {
-        case "paper":
-          return "lose";
-          break; // Excution won't reach this line, but i left it for overall readablity.
-        case "scissors":
-          return "win";
-          break;
-      }
-    } else if (humanChoice === "paper") {
-      switch (computerChoice) {
-        case "scissors":
-          return "lose";
-          break;
-        case "rock":
-          return "win";
-          break;
-      }
-    } else if (humanChoice === "scissors") {
-      switch (computerChoice) {
-        case "rock":
-          return "lose";
-          break;
-        case "paper":
-          return "win";
-          break;
-      }
-    } else {
-      return "invalid";
-    }
-  }
-}
-
 function playGame() {
   let computerScore = 0;
   let humanScore = 0;
 
-  console.log(
-    `Your Score: ${humanScore}\nComputer Score: ${computerScore}\n${evaluateScores(
-      humanScore,
-      computerScore
-    )}`
-  );
+  let button_rock = document.querySelector("#button_rock");
+  let button_paper = document.querySelector("#button_paper");
+  let button_scissors = document.querySelector("#button_scissors");
+
+  document.addEventListener("click", (event) => {
+    let computerChoice = getComputerChoice();
+    let humanChoice;
+    switch (event.target) {
+      case button_rock:
+        humanChoice = "rock";
+        break;
+      case button_paper:
+        humanChoice = "paper";
+        break;
+      case button_scissors:
+        humanChoice = "scissors";
+        break;
+    }
+    playRound(humanChoice, computerChoice);
+  });
 
   function playRound(humanChoice, computerChoice) {
     let result = evaluateChoices(humanChoice, computerChoice);
@@ -100,6 +51,69 @@ function playGame() {
       return "You Lost";
     }
   }
+  //Helper Functions
+  function evaluateChoices(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+      return "tie";
+    } else {
+      if (humanChoice === "rock") {
+        switch (computerChoice) {
+          case "paper":
+            return "lose";
+            break; // Excution won't reach this line, but i left it for overall readablity.
+          case "scissors":
+            return "win";
+            break;
+        }
+      } else if (humanChoice === "paper") {
+        switch (computerChoice) {
+          case "scissors":
+            return "lose";
+            break;
+          case "rock":
+            return "win";
+            break;
+        }
+      } else if (humanChoice === "scissors") {
+        switch (computerChoice) {
+          case "rock":
+            return "lose";
+            break;
+          case "paper":
+            return "win";
+            break;
+        }
+      } else {
+        return "invalid";
+      }
+    }
+  }
 }
 
-playGame();
+function getComputerChoice() {
+  let randomChance = Math.random();
+
+  if (randomChance >= 0.66) {
+    return "rock";
+  } else if (randomChance >= 0.33) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+}
+//Deprecated Function
+function getHumanChoice() {
+  let humanChoice = prompt("Choose: Rock, Paper or Scissors");
+  humanChoice = humanChoice.toLowerCase(); //So any form the user inputs the value can be processed as if it is lowercase.
+  if (
+    humanChoice === "rock" ||
+    humanChoice === "paper" ||
+    humanChoice === "scissors"
+  ) {
+    return humanChoice;
+  } else {
+    console.log("Invalid Choice, Pick Again");
+  }
+}
+
+
