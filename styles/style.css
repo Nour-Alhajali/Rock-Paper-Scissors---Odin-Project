@@ -1,1 +1,113 @@
+/* Css Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Variables */
+
+:root {
+  --color-background: #1f2024;
+  --color-text: #f8fef9;
+  --color-accent: #4e76b8;
+}
+
+/* Main Container */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Game Header (Gameplay Info) */
+.game-main {
+  width: min(65vw, 500px);
+  height: min(70vw, 550px);
+
+  background-color: #8ae9ec;
+  margin-block: 1rem 5rem;
+
+  border-radius: 5vw;
+
+  position: relative;
+}
+
+/* Game Controls Container */
+.game-main .game-controls {
+  height: 20%;
+  width: 90%;
+
+  background-color: var(--color-background);
+
+  border-radius: 100vw 100vw 0 0;
+
+  position: absolute;
+  bottom: -10%;
+  left: 0px;
+  right: 0px;
+
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding-inline: 3rem;
+}
+
+/* Game Controls */
+.game-controls .control-button {
+  width: min(9vw, 5rem);
+  height: min(9vw, 5rem);
+
+  border-radius: 2.5rem;
+}
+
+.game-controls .control-button:hover {
+  scale: 1.1;
+}
+
+/* Game Main UI (Human vs Computer Choices) */
+
+.game-main .game-main-UI {
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Choice UI */
+
+.game-main-UI .choice-UI {
+  width: min(14vw, 8rem);
+  height: min(14vw, 8rem);
+
+  background-color: var(--color-background);
+
+  border-radius: 4rem;
+}
+
+.game-main-UI hr {
+  background-color: var(--color-background);
+  height: 2px;
+  width: 80%;
+
+  border: none;
+}
