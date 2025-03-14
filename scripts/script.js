@@ -101,19 +101,3 @@ function getComputerChoice() {
     return "scissors";
   }
 }
-//Deprecated Function
-function getHumanChoice() {
-  let humanChoice = prompt("Choose: Rock, Paper or Scissors");
-  humanChoice = humanChoice.toLowerCase(); //So any form the user inputs the value can be processed as if it is lowercase.
-  if (
-    humanChoice === "rock" ||
-    humanChoice === "paper" ||
-    humanChoice === "scissors"
-  ) {
-    return humanChoice;
-  } else {
-    console.log("Invalid Choice, Pick Again");
-  }
-}
-
-
