@@ -74,10 +74,61 @@ body {
   height: min(9vw, 5rem);
 
   border-radius: 2.5rem;
+  border: 2px var(--color-text) solid;
+
+  background-color: transparent;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 55%;
 }
 
 .game-controls .control-button:hover {
   scale: 1.1;
+}
+
+.game-controls #button_rock {
+  background-image: url("/assets/images/rock.png");
+  background-size: 75%;
+}
+
+.game-controls #button_paper {
+  background-image: url("/assets/images/paper.png");
+  background-size: 70%;
+  background-position: 30%;
+}
+
+.game-controls #button_scissors {
+  background-image: url("/assets/images/scissors.png");
+  background-size: 60%;
+}
+/* Score Labels */
+.score-labels {
+  width: 80%;
+
+  margin-inline: auto;
+
+  position: absolute;
+  left: 0;
+
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-labels p {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+p#human-score {
+  color: #6098f3;
+}
+
+p#computer-score {
+  color: #ff2f3f;
 }
 
 /* Game Main UI (Human vs Computer Choices) */

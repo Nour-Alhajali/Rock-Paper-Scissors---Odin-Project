@@ -88,16 +88,16 @@ function playGame() {
       }
     }
   }
-}
 
-function getComputerChoice() {
-  let randomChance = Math.random();
+  function getComputerChoice() {
+    let randomChance = Math.random();
 
-  if (randomChance >= 0.66) {
-    return "rock";
-  } else if (randomChance >= 0.33) {
-    return "paper";
-  } else {
-    return "scissors";
+    if (randomChance >= 0.66) {
+      return "rock";
+    } else if (randomChance >= 0.33) {
+      return "paper";
+    } else {
+      return "scissors";
+    }
   }
 }
