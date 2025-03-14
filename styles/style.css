@@ -81,6 +81,8 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 55%;
+
+  z-index: 1;
 }
 
 .game-controls .control-button:hover {
