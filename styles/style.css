@@ -184,13 +184,13 @@ p#computer-score {
   position: absolute;
 
   font-weight: bold;
-  font-size: min(5vw, 2.5rem);
+  font-size: min(5vw, 2.2rem);
 
   text-transform: capitalize;
 
   background-color: var(--color-game-background);
 
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
 
   color: var(--color-background);
 }
