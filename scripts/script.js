@@ -6,21 +6,42 @@ function playGame() {
   let button_paper = document.querySelector("#button_paper");
   let button_scissors = document.querySelector("#button_scissors");
 
+  let computerChoiceImage = document.querySelector("#computer-choice");
+  let humanChoiceImage = document.querySelector("#human-choice");
+
+  let humanScoreLabel = document.querySelector("#human-score");
+  let computerScoreLabel = document.querySelector("#computer-score");
+
   document.addEventListener("click", (event) => {
     let computerChoice = getComputerChoice();
+    let computerChoiceImageURL = getComputerChoiceImage(computerChoice);
     let humanChoice;
+    let humanChoiceImageURL;
+
+    //Set humanChoice and humanChoiceImage and apply image according the choice button pressed
     switch (event.target) {
       case button_rock:
         humanChoice = "rock";
+        humanChoiceImageURL = "/assets/images/rock.png";
+        humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL})`;
         break;
       case button_paper:
         humanChoice = "paper";
+        humanChoiceImageURL = "/assets/images/paper.png";
+        humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL}); background-position: 40%`;
+
         break;
       case button_scissors:
         humanChoice = "scissors";
+        humanChoiceImageURL = "/assets/images/scissors.png";
+        humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL});`;
+
         break;
     }
+    computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL});`;
     playRound(humanChoice, computerChoice);
+    humanScoreLabel.textContent = String(humanScore);
+    computerScoreLabel.textContent = String(computerScore);
   });
 
   function playRound(humanChoice, computerChoice) {
@@ -100,4 +121,17 @@ function playGame() {
       return "scissors";
     }
   }
+
+  function getComputerChoiceImage(choice) {
+    switch (choice) {
+      case "rock":
+        return "assets/images/rock.png";
+      case "paper":
+        return "assets/images/paper.png";
+      case "scissors":
+        return "assets/images/scissors.png";
+    }
+  }
 }
+
+playGame();
