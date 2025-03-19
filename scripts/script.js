@@ -38,7 +38,12 @@ function playGame() {
 
         break;
     }
-    computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL});`;
+    if (computerChoice == "paper") {
+      computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL}); background-position: 40%`;
+    } else {
+      computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL});`;
+    }
+
     playRound(humanChoice, computerChoice);
     humanScoreLabel.textContent = String(humanScore);
     computerScoreLabel.textContent = String(computerScore);
