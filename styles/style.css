@@ -147,7 +147,7 @@ p#computer-score {
   align-items: center;
 }
 
-/* Choice UI */
+/* Choice UI / Choice images*/
 
 .game-main-UI .choice-UI {
   width: min(14vw, 8rem);
@@ -195,6 +195,9 @@ p#computer-score {
   color: var(--color-background);
 }
 
+/* Dynamically added classes */
+
+/* Choice Images lost and won added styles */
 .choice-UI-lost {
   scale: 0.9;
   border: 2px red solid;
@@ -203,4 +206,10 @@ p#computer-score {
 .choice-UI-won {
   scale: 1.1;
   border: 2px greenyellow solid;
+}
+
+/* Game title */
+
+.game-header h1 {
+  font-size: min(5vw, 2rem);
 }
