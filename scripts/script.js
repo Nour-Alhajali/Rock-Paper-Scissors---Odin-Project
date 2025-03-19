@@ -50,6 +50,7 @@ function playGame() {
 
     if (humanScore >= 5 || computerScore >= 5) {
       alert(evaluateScores(humanScore, computerScore));
+      resetGame();
     }
   });
 
@@ -162,6 +163,15 @@ function playGame() {
   function editScoreLabels(humanScore, computerScore) {
     humanScoreLabel.textContent = String(humanScore);
     computerScoreLabel.textContent = String(computerScore);
+  }
+  function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    editScoreLabels(humanScore, computerScore);
+    editInfoText(infoText, "");
+
+    humanChoiceImage.style.cssText = "background-image: url('#')";
+    computerChoiceImage.style.cssText = "background-image: url('#')";
   }
 }
 
