@@ -46,8 +46,11 @@ function playGame() {
     }
 
     playRound(humanChoice, computerChoice);
-    humanScoreLabel.textContent = String(humanScore);
-    computerScoreLabel.textContent = String(computerScore);
+    editScoreLabels(humanScore, computerScore);
+
+    if (humanScore >= 5 || computerScore >= 5) {
+      alert(evaluateScores(humanScore, computerScore));
+    }
   });
 
   function playRound(humanChoice, computerChoice) {
@@ -155,6 +158,10 @@ function playGame() {
         infoTextElement.textContent = "Pick A Chioce";
         break;
     }
+  }
+  function editScoreLabels(humanScore, computerScore) {
+    humanScoreLabel.textContent = String(humanScore);
+    computerScoreLabel.textContent = String(computerScore);
   }
 }
 
