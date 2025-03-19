@@ -33,11 +33,11 @@ body {
 
 /* Game Header (Gameplay Info) */
 .game-main {
-  width: min(65vw, 500px);
-  height: min(70vw, 550px);
+  width: min(70vw, 500px);
+  height: min(75vw, 550px);
 
   background-color: var(--color-game-background);
-  margin-block: 1rem 5rem;
+  margin-block: 1rem min(8vw, 4rem);
 
   border-radius: 5vw;
 
@@ -71,8 +71,8 @@ body {
 
 /* Game Controls */
 .game-controls .control-button {
-  width: min(9vw, 5rem);
-  height: min(9vw, 5rem);
+  width: min(11vw, 5rem);
+  height: min(11vw, 5rem);
 
   border-radius: 2.5rem;
   border: 2px var(--color-text) solid;
@@ -150,8 +150,8 @@ p#computer-score {
 /* Choice UI / Choice images*/
 
 .game-main-UI .choice-UI {
-  width: min(14vw, 8rem);
-  height: min(14vw, 8rem);
+  width: min(16vw, 7rem);
+  height: min(16vw, 7rem);
 
   border-radius: 4rem;
 
@@ -212,4 +212,25 @@ p#computer-score {
 
 .game-header h1 {
   font-size: min(5vw, 2rem);
+}
+
+/* Game footer */
+.game-footer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.nour-pic {
+  height: min(8vw, 3.4rem);
+  width: min(8vw, 3.4rem);
+
+  background-color: #ff2f3f;
+
+  border-radius: 2rem;
+  border: 1px white solid;
+
+  margin-bottom: 0.5rem;
 }
