@@ -2,17 +2,17 @@ function playGame() {
   let computerScore = 0;
   let humanScore = 0;
 
-  let button_rock = document.querySelector("#button_rock");
-  let button_paper = document.querySelector("#button_paper");
-  let button_scissors = document.querySelector("#button_scissors");
+  const button_rock = document.querySelector("#button_rock");
+  const button_paper = document.querySelector("#button_paper");
+  const button_scissors = document.querySelector("#button_scissors");
 
-  let computerChoiceImage = document.querySelector("#computer-choice");
-  let humanChoiceImage = document.querySelector("#human-choice");
+  const computerChoiceImage = document.querySelector("#computer-choice");
+  const humanChoiceImage = document.querySelector("#human-choice");
 
-  let humanScoreLabel = document.querySelector("#human-score");
-  let computerScoreLabel = document.querySelector("#computer-score");
+  const humanScoreLabel = document.querySelector("#human-score");
+  const computerScoreLabel = document.querySelector("#computer-score");
 
-  let infoText = document.querySelector("#info-text");
+  const infoText = document.querySelector("#info-text");
   document.addEventListener("click", (event) => {
     if (
       event.target === button_rock ||
