@@ -14,43 +14,49 @@ function playGame() {
 
   let infoText = document.querySelector("#info-text");
   document.addEventListener("click", (event) => {
-    let computerChoice = getComputerChoice();
-    let computerChoiceImageURL = getComputerChoiceImage(computerChoice);
-    let humanChoice;
-    let humanChoiceImageURL;
+    if (
+      event.target === button_rock ||
+      event.target === button_paper ||
+      event.target === button_scissors
+    ) {
+      let computerChoice = getComputerChoice();
+      let computerChoiceImageURL = getComputerChoiceImage(computerChoice);
+      let humanChoice;
+      let humanChoiceImageURL;
 
-    //Set humanChoice and humanChoiceImage and apply image according the choice button pressed
-    switch (event.target) {
-      case button_rock:
-        humanChoice = "rock";
-        humanChoiceImageURL = "/assets/images/rock.png";
-        humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL})`;
-        break;
-      case button_paper:
-        humanChoice = "paper";
-        humanChoiceImageURL = "/assets/images/paper.png";
-        humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL}); background-position: 40%`;
+      //Set humanChoice and humanChoiceImage and apply image according the choice button pressed
+      switch (event.target) {
+        case button_rock:
+          humanChoice = "rock";
+          humanChoiceImageURL = "/assets/images/rock.png";
+          humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL})`;
+          break;
+        case button_paper:
+          humanChoice = "paper";
+          humanChoiceImageURL = "/assets/images/paper.png";
+          humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL}); background-position: 40%`;
 
-        break;
-      case button_scissors:
-        humanChoice = "scissors";
-        humanChoiceImageURL = "/assets/images/scissors.png";
-        humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL});`;
+          break;
+        case button_scissors:
+          humanChoice = "scissors";
+          humanChoiceImageURL = "/assets/images/scissors.png";
+          humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL});`;
 
-        break;
-    }
-    if (computerChoice == "paper") {
-      computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL}); background-position: 40%`;
-    } else {
-      computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL});`;
-    }
+          break;
+      }
+      if (computerChoice == "paper") {
+        computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL}); background-position: 40%`;
+      } else {
+        computerChoiceImage.style.cssText = `background-image: url(${computerChoiceImageURL});`;
+      }
 
-    playRound(humanChoice, computerChoice);
-    editScoreLabels(humanScore, computerScore);
+      playRound(humanChoice, computerChoice);
+      editScoreLabels(humanScore, computerScore);
 
-    if (humanScore >= 5 || computerScore >= 5) {
-      alert(evaluateScores(humanScore, computerScore));
-      resetGame();
+      if (humanScore >= 5 || computerScore >= 5) {
+        alert(evaluateScores(humanScore, computerScore));
+        resetGame();
+      }
     }
   });
 
