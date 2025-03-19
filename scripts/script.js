@@ -57,6 +57,7 @@ function playGame() {
   function playRound(humanChoice, computerChoice) {
     let result = evaluateChoices(humanChoice, computerChoice);
     editInfoText(result);
+    styleChoiceImages(result);
 
     console.log(`You chose ${humanChoice} \nComputer chose ${computerChoice}`);
     switch (result) {
@@ -169,9 +170,31 @@ function playGame() {
     computerScore = 0;
     editScoreLabels(humanScore, computerScore);
     editInfoText(infoText, "");
+    styleChoiceImages("");
 
     humanChoiceImage.style.cssText = "background-image: url('#')";
     computerChoiceImage.style.cssText = "background-image: url('#')";
+  }
+  function styleChoiceImages(result) {
+    const wonClass = "choice-UI-won";
+    const lostClass = "choice-UI-lost";
+
+    //Remove any present result styles
+    humanChoiceImage.classList.remove(wonClass, lostClass);
+    computerChoiceImage.classList.remove(wonClass, lostClass);
+
+    //style according to result
+    switch (result) {
+      case "win":
+        humanChoiceImage.classList.toggle(wonClass);
+        computerChoiceImage.classList.toggle(lostClass);
+        break;
+
+      case "lose":
+        humanChoiceImage.classList.toggle(lostClass);
+        computerChoiceImage.classList.toggle(wonClass);
+        break;
+    }
   }
 }
 

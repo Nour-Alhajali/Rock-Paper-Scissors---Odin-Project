@@ -194,3 +194,13 @@ p#computer-score {
 
   color: var(--color-background);
 }
+
+.choice-UI-lost {
+  scale: 0.9;
+  border: 2px red solid;
+}
+
+.choice-UI-won {
+  scale: 1.1;
+  border: 2px darkgreen solid;
+}
