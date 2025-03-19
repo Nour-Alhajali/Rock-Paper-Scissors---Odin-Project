@@ -56,7 +56,7 @@ function playGame() {
 
   function playRound(humanChoice, computerChoice) {
     let result = evaluateChoices(humanChoice, computerChoice);
-    editInfoText(infoText, result);
+    editInfoText(result);
 
     console.log(`You chose ${humanChoice} \nComputer chose ${computerChoice}`);
     switch (result) {
@@ -144,7 +144,7 @@ function playGame() {
     }
   }
 
-  function editInfoText(infoTextElement, result) {
+  function editInfoText(result) {
     switch (result) {
       case "win":
         infoTextElement.textContent = "Round Won";
