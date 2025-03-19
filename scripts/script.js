@@ -12,6 +12,7 @@ function playGame() {
   let humanScoreLabel = document.querySelector("#human-score");
   let computerScoreLabel = document.querySelector("#computer-score");
 
+  let infoText = document.querySelector("#info-text");
   document.addEventListener("click", (event) => {
     let computerChoice = getComputerChoice();
     let computerChoiceImageURL = getComputerChoiceImage(computerChoice);
@@ -51,6 +52,7 @@ function playGame() {
 
   function playRound(humanChoice, computerChoice) {
     let result = evaluateChoices(humanChoice, computerChoice);
+    editInfoText(infoText, result);
 
     console.log(`You chose ${humanChoice} \nComputer chose ${computerChoice}`);
     switch (result) {
@@ -135,6 +137,23 @@ function playGame() {
         return "assets/images/paper.png";
       case "scissors":
         return "assets/images/scissors.png";
+    }
+  }
+
+  function editInfoText(infoTextElement, result) {
+    switch (result) {
+      case "win":
+        infoTextElement.textContent = "Round Won";
+        break;
+      case "lose":
+        infoTextElement.textContent = "Round Lost";
+        break;
+      case "tie":
+        infoTextElement.textContent = "Round Tied";
+        break;
+      default:
+        infoTextElement.textContent = "Pick A Chioce";
+        break;
     }
   }
 }
