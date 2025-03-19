@@ -147,16 +147,16 @@ function playGame() {
   function editInfoText(result) {
     switch (result) {
       case "win":
-        infoTextElement.textContent = "Round Won";
+        infoText.textContent = "Round Won";
         break;
       case "lose":
-        infoTextElement.textContent = "Round Lost";
+        infoText.textContent = "Round Lost";
         break;
       case "tie":
-        infoTextElement.textContent = "Round Tied";
+        infoText.textContent = "Round Tied";
         break;
       default:
-        infoTextElement.textContent = "Pick A Chioce";
+        infoText.textContent = "Pick A Chioce";
         break;
     }
   }
