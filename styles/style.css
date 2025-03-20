@@ -71,8 +71,8 @@ body {
 
 /* Game Controls */
 .game-controls .control-button {
-  width: min(11vw, 5rem);
-  height: min(11vw, 5rem);
+  width: min(11vw, 4.3rem);
+  height: min(11vw, 4.3rem);
 
   border-radius: 2.5rem;
   border: 2px var(--color-text) solid;
@@ -224,13 +224,40 @@ p#computer-score {
 }
 
 .nour-pic {
-  height: min(8vw, 3.4rem);
-  width: min(8vw, 3.4rem);
+  height: min(8vw, 3rem);
+  width: min(8vw, 3rem);
 
-  background-color: #ff2f3f;
+  background-image: url("/assets/images/profile-user.png");
+  background-size: contain;
 
   border-radius: 2rem;
-  border: 1px white solid;
 
   margin-bottom: 0.5rem;
+}
+
+.link-icons_container {
+  display: flex;
+  column-gap: 0.5rem;
+}
+.link-icon div {
+  width: min(4vw, 1.5rem);
+  height: min(4vw, 1.5rem);
+
+  background-color: #6098f3;
+
+  border-radius: 0.75rem;
+}
+
+.link-icon #github {
+  background-image: url("/assets/images/github-logo.png");
+  background-size: contain;
+
+  background-color: transparent;
+}
+
+.link-icon #linkedin {
+  background-image: url("/assets/images/linkedin-logo.png");
+  background-size: contain;
+
+  background-color: transparent;
 }
