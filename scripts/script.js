@@ -13,6 +13,11 @@ function playGame() {
   const computerScoreLabel = document.querySelector("#computer-score");
 
   const infoText = document.querySelector("#info-text");
+
+  const roundWonAudio = document.querySelector("#round-won-audio");
+  const roundLostAudio = document.querySelector("#round-lost-audio");
+  const roundTiedAudio = document.querySelector("#round-tied-audio");
+
   document.addEventListener("click", (event) => {
     if (
       event.target === button_rock ||
@@ -64,6 +69,7 @@ function playGame() {
     let result = evaluateChoices(humanChoice, computerChoice);
     editInfoText(result);
     styleChoiceImages(result);
+    playRoundResultAudio(result);
 
     console.log(`You chose ${humanChoice} \nComputer chose ${computerChoice}`);
     switch (result) {
@@ -199,6 +205,19 @@ function playGame() {
       case "lose":
         humanChoiceImage.classList.toggle(lostClass);
         computerChoiceImage.classList.toggle(wonClass);
+        break;
+    }
+  }
+  function playRoundResultAudio(result) {
+    switch (result) {
+      case "win":
+        roundWonAudio.play();
+        break;
+      case "lose":
+        roundLostAudio.play();
+        break;
+      case "tie":
+        roundTiedAudio.play();
         break;
     }
   }
