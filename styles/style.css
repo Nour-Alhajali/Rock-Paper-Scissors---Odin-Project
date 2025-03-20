@@ -91,18 +91,18 @@ body {
 }
 
 .game-controls #button_rock {
-  background-image: url("/assets/images/rock.png");
+  background-image: url("assets/images/rock.png");
   background-size: 75%;
 }
 
 .game-controls #button_paper {
-  background-image: url("/assets/images/paper.png");
+  background-image: url("assets/images/paper.png");
   background-size: 70%;
   background-position: 30%;
 }
 
 .game-controls #button_scissors {
-  background-image: url("/assets/images/scissors.png");
+  background-image: url("assets/images/scissors.png");
   background-size: 60%;
 }
 /* Score Labels */

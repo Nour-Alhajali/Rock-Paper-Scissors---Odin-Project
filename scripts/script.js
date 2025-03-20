@@ -28,18 +28,18 @@ function playGame() {
       switch (event.target) {
         case button_rock:
           humanChoice = "rock";
-          humanChoiceImageURL = "/assets/images/rock.png";
+          humanChoiceImageURL = "assets/images/rock.png";
           humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL})`;
           break;
         case button_paper:
           humanChoice = "paper";
-          humanChoiceImageURL = "/assets/images/paper.png";
+          humanChoiceImageURL = "assets/images/paper.png";
           humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL}); background-position: 40%`;
 
           break;
         case button_scissors:
           humanChoice = "scissors";
-          humanChoiceImageURL = "/assets/images/scissors.png";
+          humanChoiceImageURL = "assets/images/scissors.png";
           humanChoiceImage.style.cssText = `background-image: url(${humanChoiceImageURL});`;
 
           break;
