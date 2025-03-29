@@ -11,7 +11,6 @@
   --color-background: #1f2024;
   --color-game-background: #8ae9ec;
   --color-text: #f8fef9;
-  --color-accent: #4e76b8;
 }
 
 /* Main Container */
@@ -32,6 +31,14 @@ body {
 }
 
 /* Game Header (Gameplay Info) */
+
+.game-header h1 {
+  color: var(--color-text);
+
+  font-size: min(5vw, 2rem);
+}
+
+/* Game Main Container */
 .game-main {
   width: min(70vw, 500px);
   height: min(75vw, 550px);
@@ -208,12 +215,6 @@ p#computer-score {
   border: 2px greenyellow solid;
 }
 
-/* Game title */
-
-.game-header h1 {
-  font-size: min(5vw, 2rem);
-}
-
 /* Game footer */
 .game-footer {
   display: flex;
@@ -224,11 +225,14 @@ p#computer-score {
 }
 
 .nour-pic {
-  height: min(8vw, 3rem);
-  width: min(8vw, 3rem);
+  height: min(8vw, 4rem);
+  width: min(8vw, 4rem);
 
-  background-image: url("../assets/images/profile-user.png");
-  background-size: contain;
+  background-image: url("../assets/images/Nour-Profile-Pic.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0% 20%;
+  cursor: not-allowed;
 
   border-radius: 2rem;
 
@@ -240,12 +244,15 @@ p#computer-score {
   column-gap: 0.5rem;
 }
 .link-icon div {
-  width: min(4vw, 1.5rem);
-  height: min(4vw, 1.5rem);
+  width: min(4vw, 1.8rem);
+  height: min(4vw, 1.8rem);
 
   background-color: #6098f3;
 
   border-radius: 0.75rem;
+}
+.link-icon div:hover {
+  scale: 1.1;
 }
 
 .link-icon #github {
