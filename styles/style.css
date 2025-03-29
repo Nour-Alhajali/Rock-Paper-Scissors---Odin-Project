@@ -234,6 +234,7 @@ p#computer-score {
   background-position: 0% 20%;
   cursor: not-allowed;
 
+  border: 2px var(--color-game-background) solid;
   border-radius: 2rem;
 
   margin-bottom: 0.5rem;
